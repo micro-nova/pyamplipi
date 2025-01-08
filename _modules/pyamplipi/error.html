@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyamplipi.error &mdash; pyamplipi  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -69,12 +69,12 @@
            <div itemprop="articleBody">
              
   <h1>Source code for pyamplipi.error</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span></span><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span>
 
 
 <div class="viewcode-block" id="AmpliPiError">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AmpliPiError">[docs]</a>
-<span class="k">class</span> <span class="nc">AmpliPiError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AmpliPiError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Base exception class for all AmpliPi-related errors.</span>
 
 <span class="sd">    Args:</span>
@@ -82,7 +82,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="AmpliPiError.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AmpliPiError.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
 </div>
 
@@ -90,7 +90,7 @@
 
 <div class="viewcode-block" id="APIError">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.APIError">[docs]</a>
-<span class="k">class</span> <span class="nc">APIError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">APIError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when the AmpliPi API returns an error response.</span>
 
 <span class="sd">    Args:</span>
@@ -98,7 +98,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="APIError.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.APIError.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">error</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="s2">&quot;AmpliPi api error: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error</span><span class="p">))</span></div>
 </div>
 
@@ -106,7 +106,7 @@
 
 <div class="viewcode-block" id="MissingAttributeError">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.MissingAttributeError">[docs]</a>
-<span class="k">class</span> <span class="nc">MissingAttributeError</span><span class="p">(</span><span class="n">APIError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">MissingAttributeError</span><span class="p">(</span><span class="n">APIError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when an expected attribute is missing from an API response.</span>
 
 <span class="sd">    Args:</span>
@@ -121,7 +121,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="MissingAttributeError.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.MissingAttributeError.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">attribute</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">response</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">attribute</span> <span class="o">=</span> <span class="n">attribute</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="n">url</span>
@@ -144,7 +144,7 @@
 
 <div class="viewcode-block" id="AmpliPiUnreachableError">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AmpliPiUnreachableError">[docs]</a>
-<span class="k">class</span> <span class="nc">AmpliPiUnreachableError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AmpliPiUnreachableError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when the AmpliPi device cannot be reached.</span>
 
 <span class="sd">    Args:</span>
@@ -155,7 +155,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="AmpliPiUnreachableError.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AmpliPiUnreachableError.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">reason</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;AmpliPi is unreachable&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="o">=</span> <span class="n">reason</span>
         <span class="k">if</span> <span class="n">reason</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
@@ -167,7 +167,7 @@
 
 <div class="viewcode-block" id="AccessDeniedError">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AccessDeniedError">[docs]</a>
-<span class="k">class</span> <span class="nc">AccessDeniedError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AccessDeniedError</span><span class="p">(</span><span class="n">AmpliPiError</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Exception raised when access to an AmpliPi resource is denied.</span>
 
 <span class="sd">    Args:</span>
@@ -182,7 +182,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 <div class="viewcode-block" id="AccessDeniedError.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.error.AccessDeniedError.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resource</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">resource</span> <span class="o">=</span> <span class="n">resource</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">error</span> <span class="o">=</span> <span class="n">error</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">message</span> <span class="o">=</span> <span class="n">message</span>

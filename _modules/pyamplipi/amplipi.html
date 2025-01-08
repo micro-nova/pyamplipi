@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyamplipi.amplipi &mdash; pyamplipi  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -72,12 +72,12 @@
 <span></span><span class="sd">&quot;&quot;&quot;A class for interacting with AmpliPi</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Tuple</span>
 
-<span class="kn">from</span> <span class="nn">aiohttp</span> <span class="kn">import</span> <span class="n">ClientSession</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">aiohttp</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClientSession</span>
 
-<span class="kn">from</span> <span class="nn">pyamplipi.client</span> <span class="kn">import</span> <span class="n">Client</span>
-<span class="kn">from</span> <span class="nn">pyamplipi.models</span> <span class="kn">import</span> <span class="n">Group</span><span class="p">,</span> <span class="n">Stream</span><span class="p">,</span> <span class="n">SourceUpdate</span><span class="p">,</span> <span class="n">MultiZoneUpdate</span><span class="p">,</span> <span class="n">ZoneUpdate</span><span class="p">,</span> \
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyamplipi.client</span><span class="w"> </span><span class="kn">import</span> <span class="n">Client</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyamplipi.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Group</span><span class="p">,</span> <span class="n">Stream</span><span class="p">,</span> <span class="n">SourceUpdate</span><span class="p">,</span> <span class="n">MultiZoneUpdate</span><span class="p">,</span> <span class="n">ZoneUpdate</span><span class="p">,</span> \
     <span class="n">GroupUpdate</span><span class="p">,</span> <span class="n">StreamUpdate</span><span class="p">,</span> <span class="n">Announcement</span><span class="p">,</span> <span class="n">Status</span><span class="p">,</span> <span class="n">Config</span><span class="p">,</span> <span class="n">Info</span><span class="p">,</span> <span class="n">Source</span><span class="p">,</span> <span class="n">Zone</span><span class="p">,</span> <span class="n">Preset</span><span class="p">,</span> \
     <span class="n">PresetUpdate</span><span class="p">,</span> <span class="n">PlayMedia</span>
 
@@ -90,10 +90,10 @@
 
 <div class="viewcode-block" id="AmpliPi">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi">[docs]</a>
-<span class="k">class</span> <span class="nc">AmpliPi</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">AmpliPi</span><span class="p">:</span>
 <div class="viewcode-block" id="AmpliPi.__init__">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.__init__">[docs]</a>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span>
             <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
             <span class="n">timeout</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span>
@@ -124,7 +124,7 @@
     <span class="c1"># -- status calls</span>
 <div class="viewcode-block" id="AmpliPi.get_status">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_status">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve the current status of the AmpliPi system.</span>
 
@@ -137,7 +137,7 @@
 
 <div class="viewcode-block" id="AmpliPi.load_config">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.load_config">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_config</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">Config</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load a specified configuration into the AmpliPi system.</span>
 
@@ -153,7 +153,7 @@
 
 <div class="viewcode-block" id="AmpliPi.factory_reset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.factory_reset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">factory_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">factory_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Perform a factory reset of the AmpliPi system.</span>
 
@@ -166,7 +166,7 @@
 
 <div class="viewcode-block" id="AmpliPi.system_reset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.system_reset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">system_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">system_reset</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reset the AmpliPi system.</span>
 
@@ -179,7 +179,7 @@
 
 <div class="viewcode-block" id="AmpliPi.system_reboot">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.system_reboot">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">system_reboot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">system_reboot</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Reboot the AmpliPi system.</span>
 
@@ -192,7 +192,7 @@
 
 <div class="viewcode-block" id="AmpliPi.system_shutdown">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.system_shutdown">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">system_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">system_shutdown</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Shut down the AmpliPi system.</span>
 
@@ -205,7 +205,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_info">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_info">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Info</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Info</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve general information about the AmpliPi system.</span>
 
@@ -218,7 +218,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_version">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_version">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_version</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Get the current version of the AmpliPi system.</span>
 
@@ -246,7 +246,7 @@
     <span class="c1"># -- source calls</span>
 <div class="viewcode-block" id="AmpliPi.get_sources">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_sources">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Source</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_sources</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Source</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of available audio sources.</span>
 
@@ -259,7 +259,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_source">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_source">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Source</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Source</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve details of a specific audio source.</span>
 
@@ -275,7 +275,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_source">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_source">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">source_update</span><span class="p">:</span> <span class="n">SourceUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">source_update</span><span class="p">:</span> <span class="n">SourceUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of a specific audio source.</span>
 
@@ -292,7 +292,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_source_img">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_source_img">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_source_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">outfile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_source_img</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">outfile</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve an image for a specific audio source.</span>
 
@@ -311,7 +311,7 @@
     <span class="c1"># -- zone calls</span>
 <div class="viewcode-block" id="AmpliPi.get_zone">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_zone">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Zone</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Zone</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve details of a specific zone.</span>
 
@@ -327,7 +327,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_zones">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_zones">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Zone</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Zone</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of available zones.</span>
 
@@ -340,7 +340,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_zones">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_zones">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_update</span><span class="p">:</span> <span class="n">MultiZoneUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_zones</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_update</span><span class="p">:</span> <span class="n">MultiZoneUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of multiple zones.</span>
 
@@ -356,7 +356,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_zone">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_zone">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">zone_update</span><span class="p">:</span> <span class="n">ZoneUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zone_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">zone_update</span><span class="p">:</span> <span class="n">ZoneUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of a specific zone.</span>
 
@@ -375,7 +375,7 @@
     <span class="c1"># -- group calls</span>
 <div class="viewcode-block" id="AmpliPi.create_group">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.create_group">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_group</span><span class="p">:</span> <span class="n">Group</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Group</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_group</span><span class="p">:</span> <span class="n">Group</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Group</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new group.</span>
 
@@ -391,7 +391,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_groups">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_groups">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Group</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_groups</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Group</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of available groups.</span>
 
@@ -404,7 +404,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_group">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_group">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Group</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Group</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve details of a specific group.</span>
 
@@ -420,7 +420,7 @@
 
 <div class="viewcode-block" id="AmpliPi.delete_group">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.delete_group">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Delete a specific group.</span>
 
@@ -436,7 +436,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_group">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_group">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">GroupUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_id</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">GroupUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of a specific group.</span>
 
@@ -454,7 +454,7 @@
     <span class="c1"># -- stream calls</span>
 <div class="viewcode-block" id="AmpliPi.get_streams">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_streams">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Stream</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_streams</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Stream</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of available streams.</span>
 
@@ -467,7 +467,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Stream</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Stream</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve details of a specific stream.</span>
 
@@ -483,7 +483,7 @@
 
 <div class="viewcode-block" id="AmpliPi.play_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.play_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">play_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">play_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Play a specific stream.</span>
 
@@ -499,7 +499,7 @@
 
 <div class="viewcode-block" id="AmpliPi.pause_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.pause_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">pause_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">pause_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Pause a specific stream.</span>
 
@@ -515,7 +515,7 @@
 
 <div class="viewcode-block" id="AmpliPi.previous_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.previous_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">previous_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">previous_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Play the previous stream.</span>
 
@@ -531,7 +531,7 @@
 
 <div class="viewcode-block" id="AmpliPi.next_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.next_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">next_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">next_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Play the next stream.</span>
 
@@ -547,7 +547,7 @@
 
 <div class="viewcode-block" id="AmpliPi.stop_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.stop_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">stop_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">stop_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Stop a specific stream.</span>
 
@@ -563,7 +563,7 @@
 
 <div class="viewcode-block" id="AmpliPi.station_change_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.station_change_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">station_change_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">station</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">station_change_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">station</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Change the station of a specific stream.</span>
 
@@ -580,7 +580,7 @@
 
 <div class="viewcode-block" id="AmpliPi.create_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.create_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_stream</span><span class="p">:</span> <span class="n">Stream</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_stream</span><span class="p">:</span> <span class="n">Stream</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new stream.</span>
 
@@ -596,7 +596,7 @@
 
 <div class="viewcode-block" id="AmpliPi.delete_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.delete_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Delete a specific stream.</span>
 
@@ -612,7 +612,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_stream">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_stream">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">StreamUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_stream</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stream_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">StreamUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of a specific stream.</span>
 
@@ -630,7 +630,7 @@
     <span class="c1"># -- preset calls</span>
 <div class="viewcode-block" id="AmpliPi.get_presets">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_presets">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_presets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Preset</span><span class="p">]:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_presets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Preset</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve a list of available presets.</span>
 
@@ -643,7 +643,7 @@
 
 <div class="viewcode-block" id="AmpliPi.get_preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.get_preset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">get_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Preset</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Preset</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Retrieve details of a specific preset.</span>
 
@@ -659,7 +659,7 @@
 
 <div class="viewcode-block" id="AmpliPi.set_preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.set_preset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">set_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">PresetUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">set_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">update</span><span class="p">:</span> <span class="n">PresetUpdate</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Update details of a specific preset.</span>
 
@@ -676,7 +676,7 @@
 
 <div class="viewcode-block" id="AmpliPi.create_preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.create_preset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">create_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_preset</span><span class="p">:</span> <span class="n">Preset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Preset</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">create_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_preset</span><span class="p">:</span> <span class="n">Preset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Preset</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Create a new preset.</span>
 
@@ -692,7 +692,7 @@
 
 <div class="viewcode-block" id="AmpliPi.delete_preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.delete_preset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">delete_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">delete_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Delete a specific preset.</span>
 
@@ -708,7 +708,7 @@
 
 <div class="viewcode-block" id="AmpliPi.load_preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.load_preset">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">load_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">load_preset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preset_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Load a specific preset.</span>
 
@@ -725,7 +725,7 @@
     <span class="c1"># -- anounce call</span>
 <div class="viewcode-block" id="AmpliPi.announce">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.announce">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">announce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">announcement</span><span class="p">:</span> <span class="n">Announcement</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">announce</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">announcement</span><span class="p">:</span> <span class="n">Announcement</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Announce a message using the AmpliPi system.</span>
 
@@ -743,7 +743,7 @@
     <span class="c1"># -- play media call</span>
 <div class="viewcode-block" id="AmpliPi.play_media">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.play_media">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">play_media</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">media</span><span class="p">:</span> <span class="n">PlayMedia</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">play_media</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">media</span><span class="p">:</span> <span class="n">PlayMedia</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Status</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Play a specific media file.</span>
 
@@ -767,7 +767,7 @@
     <span class="c1"># -- client control</span>
 <div class="viewcode-block" id="AmpliPi.close">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.amplipi.AmpliPi.close">[docs]</a>
-    <span class="k">async</span> <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Close the AmpliPi client session.</span>
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>pyamplipi.example &mdash; pyamplipi  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
@@ -73,18 +73,18 @@
 
 <span class="c1"># Press ⌃R to execute it or replace it with your code.</span>
 <span class="c1"># Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.</span>
-<span class="kn">import</span> <span class="nn">asyncio</span>
-<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="kn">from</span> <span class="nn">pyamplipi.amplipi</span> <span class="kn">import</span> <span class="n">AmpliPi</span>
-<span class="kn">from</span> <span class="nn">pyamplipi.models</span> <span class="kn">import</span> <span class="n">SourceUpdate</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyamplipi.amplipi</span><span class="w"> </span><span class="kn">import</span> <span class="n">AmpliPi</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyamplipi.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">SourceUpdate</span>
 
 <span class="n">_LOGGER</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="get_status">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.example.get_status">[docs]</a>
-<span class="k">async</span> <span class="k">def</span> <span class="nf">get_status</span><span class="p">():</span>
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_status</span><span class="p">():</span>
     <span class="n">amp</span> <span class="o">=</span> <span class="n">AmpliPi</span><span class="p">(</span>
         <span class="s2">&quot;http://amplipi-dev.local:5000/api&quot;</span><span class="p">,</span>
         <span class="mi">10</span><span class="p">,</span>
