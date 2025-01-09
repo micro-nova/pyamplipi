@@ -81,13 +81,14 @@
 <div class="viewcode-block" id="SourceInfo">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.SourceInfo">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">SourceInfo</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">state</span><span class="p">:</span> <span class="nb">str</span>  <span class="c1"># paused, playing, stopped, unknown, loading ???</span>
-    <span class="n">artist</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">track</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">album</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>  <span class="c1"># name of radio station</span>
-    <span class="n">img_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; Info about the current audio playing from the connected stream (generated during playback) &quot;&quot;&quot;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># paused, playing, stopped, ???</span>
+    <span class="n">artist</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">track</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">album</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># name of radio station</span>
+    <span class="n">img_url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">supported_cmds</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></div>
 
 
@@ -96,11 +97,11 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.Source">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Source</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; An audio source &quot;&quot;&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="nb">input</span><span class="p">:</span> <span class="nb">str</span>
     <span class="c1"># Additional info about the current audio playing from the stream (generated during</span>
-    <span class="n">info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SourceInfo</span><span class="p">]</span></div>
+    <span class="n">info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SourceInfo</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
     <span class="c1"># playback&#39;)</span>
 
@@ -126,7 +127,7 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.Zone">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Zone</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Audio output to a stereo pair of speakers, typically belonging to a room &quot;&quot;&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">source_id</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">mute</span><span class="p">:</span> <span class="nb">bool</span>
@@ -142,14 +143,14 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.ZoneUpdate">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">ZoneUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Reconfiguration of a Zone &quot;&quot;&quot;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-    <span class="n">vol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
-    <span class="n">vol_min</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">vol_max</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">disabled</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span></div>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_min</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_max</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">disabled</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -165,8 +166,8 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.MultiZoneUpdate">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">MultiZoneUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Reconfiguration of multiple zones specified by zone_ids and group_ids &quot;&quot;&quot;</span>
-    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span>
-    <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span>
+    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">update</span><span class="p">:</span> <span class="n">ZoneUpdate</span></div>
 
 
@@ -176,13 +177,13 @@
 <span class="k">class</span><span class="w"> </span><span class="nc">Group</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; A group of zones that can share the same audio input and be controlled as a group ie. Upstairs. Volume, mute,</span>
 <span class="sd">    and source_id fields are aggregates of the member zones.&quot;&quot;&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">zones</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-    <span class="n">vol_delta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span></div>
+    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_delta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -190,12 +191,12 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.GroupUpdate">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">GroupUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Reconfiguration of a Group &quot;&quot;&quot;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span>
-    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span>
-    <span class="n">vol_delta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span></div>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">mute</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_delta</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -211,17 +212,17 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.Stream">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Stream</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Digital stream such as Pandora, AirPlay or Spotify &quot;&quot;&quot;</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">user</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">logo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">client_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">token</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+    <span class="n">user</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">logo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">client_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">token</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -229,13 +230,13 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.StreamUpdate">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">StreamUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; Reconfiguration of a Stream &quot;&quot;&quot;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">user</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">logo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span></div>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">user</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">password</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">station</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">url</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">logo</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">freq</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -257,9 +258,9 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.PresetState">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">PresetState</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; A set of partial configuration changes to make to sources, zones, and groups &quot;&quot;&quot;</span>
-    <span class="n">sources</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">SourceUpdateWithId</span><span class="p">]]</span>
-    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ZoneUpdateWithId</span><span class="p">]]</span>
-    <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">GroupUpdateWithId</span><span class="p">]]</span></div>
+    <span class="n">sources</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">SourceUpdateWithId</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">zones</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">ZoneUpdateWithId</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">groups</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">GroupUpdateWithId</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -275,10 +276,10 @@
 <div class="viewcode-block" id="Preset">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.Preset">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Preset</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PresetState</span><span class="p">]</span>
-    <span class="n">commands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Command</span><span class="p">]]</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PresetState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">commands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Command</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">last_used</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
@@ -286,9 +287,9 @@
 <div class="viewcode-block" id="PresetUpdate">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.PresetUpdate">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">PresetUpdate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PresetState</span><span class="p">]</span>
-    <span class="n">commands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Command</span><span class="p">]]</span></div>
+    <span class="n">name</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">state</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">PresetState</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">commands</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Command</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -308,18 +309,18 @@
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.PlayMedia">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">PlayMedia</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
     <span class="n">media</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">vol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span>
-    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span>
-    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span></div>
+    <span class="n">vol</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">vol_f</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source_id</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
 <div class="viewcode-block" id="FirmwareInfo">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.FirmwareInfo">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">FirmwareInfo</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
-    <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">git_hash</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">git_dirty</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span></div>
+    <span class="n">version</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">git_hash</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">git_dirty</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -331,8 +332,8 @@
     <span class="n">mock_ctrl</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">mock_streams</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">online</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">latest_release</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
-    <span class="n">fw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">FirmwareInfo</span><span class="p">]]</span></div>
+    <span class="n">latest_release</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">fw</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">FirmwareInfo</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -350,7 +351,7 @@
 <div class="viewcode-block" id="Status">
 <a class="viewcode-back" href="../../pyamplipi.html#pyamplipi.models.Status">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">Status</span><span class="p">(</span><span class="n">Config</span><span class="p">):</span>
-    <span class="n">info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Info</span><span class="p">]</span></div>
+    <span class="n">info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Info</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 

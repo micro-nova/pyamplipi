@@ -132,7 +132,7 @@
 <span class="sd">            Status: The current status of the system.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.load_config">
@@ -147,8 +147,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the load operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="n">config</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.factory_reset">
@@ -161,7 +161,7 @@
 <span class="sd">            Status: The status of the factory reset operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;factory_reset&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.system_reset">
@@ -174,7 +174,7 @@
 <span class="sd">            Status: The status of the system reset operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;reset&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.system_reboot">
@@ -187,7 +187,7 @@
 <span class="sd">            Status: The status of the reboot operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;reboot&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.system_shutdown">
@@ -200,7 +200,7 @@
 <span class="sd">            Status: The status of the shutdown operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;shutdown&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_info">
@@ -213,7 +213,7 @@
 <span class="sd">            Info: Information about the system.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;info&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Info</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Info</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_version">
@@ -254,7 +254,7 @@
 <span class="sd">            List[Source]: A list of available sources.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sources&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Source</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">]]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Source</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;sources&#39;</span><span class="p">]]</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_source">
@@ -270,7 +270,7 @@
 <span class="sd">            Source: The details of the specified source.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sources/</span><span class="si">{</span><span class="n">source_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Source</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Source</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">from_attributes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_source">
@@ -286,8 +286,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sources/</span><span class="si">{</span><span class="n">source_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">source_update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;sources/</span><span class="si">{</span><span class="n">source_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">source_update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_source_img">
@@ -322,7 +322,7 @@
 <span class="sd">            Zone: The details of the specified zone.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;zones/</span><span class="si">{</span><span class="n">zone_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Zone</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Zone</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_zones">
@@ -335,7 +335,7 @@
 <span class="sd">            List[Zone]: A list of available zones.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;zones&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Zone</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span> <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;zones&#39;</span><span class="p">]]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Zone</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span> <span class="k">for</span> <span class="n">zone</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;zones&#39;</span><span class="p">]]</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_zones">
@@ -350,8 +350,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;zones&#39;</span><span class="p">,</span> <span class="n">zone_update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="s1">&#39;zones&#39;</span><span class="p">,</span> <span class="n">zone_update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_zone">
@@ -368,8 +368,8 @@
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;zones/</span><span class="si">{</span><span class="n">zone_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span>
-                                            <span class="n">zone_update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+                                            <span class="n">zone_update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- group calls</span>
@@ -385,8 +385,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Group: The created group.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="n">new_group</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Group</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;group&#39;</span><span class="p">,</span> <span class="n">new_group</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Group</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_groups">
@@ -399,7 +399,7 @@
 <span class="sd">            List[Group]: A list of available groups.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;groups&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Group</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">]]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Group</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;groups&#39;</span><span class="p">]]</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_group">
@@ -415,7 +415,7 @@
 <span class="sd">            Group: The details of the specified group.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;groups/</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Group</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Group</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.delete_group">
@@ -431,7 +431,7 @@
 <span class="sd">            Status: The status of the delete operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;groups/</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_group">
@@ -447,8 +447,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;groups/</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;groups/</span><span class="si">{</span><span class="n">group_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- stream calls</span>
@@ -462,7 +462,7 @@
 <span class="sd">            List[Stream]: A list of available streams.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;streams&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Stream</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span> <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;streams&#39;</span><span class="p">]]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Stream</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span> <span class="k">for</span> <span class="n">stream</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;streams&#39;</span><span class="p">]]</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_stream">
@@ -478,7 +478,7 @@
 <span class="sd">            Stream: The details of the specified stream.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Stream</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Stream</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.play_stream">
@@ -494,7 +494,7 @@
 <span class="sd">            Status: The status of the play operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/play&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.pause_stream">
@@ -510,7 +510,7 @@
 <span class="sd">            Status: The status of the pause operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/pause&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.previous_stream">
@@ -526,7 +526,7 @@
 <span class="sd">            Status: The status of the previous stream operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/prev&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.next_stream">
@@ -542,7 +542,7 @@
 <span class="sd">            Status: The status of the next stream operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/next&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.stop_stream">
@@ -558,7 +558,7 @@
 <span class="sd">            Status: The status of the stop operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/stop&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.station_change_stream">
@@ -575,7 +575,7 @@
 <span class="sd">            Status: The status of the station change operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">/station=</span><span class="si">{</span><span class="n">station</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.create_stream">
@@ -590,8 +590,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the create operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">new_stream</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;stream&#39;</span><span class="p">,</span> <span class="n">new_stream</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.delete_stream">
@@ -607,7 +607,7 @@
 <span class="sd">            Status: The status of the delete operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_stream">
@@ -623,8 +623,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;streams/</span><span class="si">{</span><span class="n">stream_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- preset calls</span>
@@ -638,7 +638,7 @@
 <span class="sd">            List[Preset]: A list of available presets.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;presets&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="p">[</span><span class="n">Preset</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">preset</span><span class="p">)</span> <span class="k">for</span> <span class="n">preset</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;presets&#39;</span><span class="p">]]</span></div>
+        <span class="k">return</span> <span class="p">[</span><span class="n">Preset</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">preset</span><span class="p">)</span> <span class="k">for</span> <span class="n">preset</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;presets&#39;</span><span class="p">]]</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.get_preset">
@@ -654,7 +654,7 @@
 <span class="sd">            Preset: The details of the specified preset.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;presets/</span><span class="si">{</span><span class="n">preset_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Preset</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Preset</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.set_preset">
@@ -670,8 +670,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the update operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;presets/</span><span class="si">{</span><span class="n">preset_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">patch</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;presets/</span><span class="si">{</span><span class="n">preset_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">update</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.create_preset">
@@ -686,8 +686,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Preset: The created preset.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;preset&#39;</span><span class="p">,</span> <span class="n">new_preset</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">Preset</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;preset&#39;</span><span class="p">,</span> <span class="n">new_preset</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">Preset</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.delete_preset">
@@ -703,7 +703,7 @@
 <span class="sd">            Status: The status of the delete operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;presets/</span><span class="si">{</span><span class="n">preset_id</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="AmpliPi.load_preset">
@@ -719,7 +719,7 @@
 <span class="sd">            Status: The status of the load operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;presets/</span><span class="si">{</span><span class="n">preset_id</span><span class="si">}</span><span class="s1">/load&#39;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- anounce call</span>
@@ -736,8 +736,8 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            Status: The status of the announcement operation.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;announce&#39;</span><span class="p">,</span> <span class="n">announcement</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+        <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;announce&#39;</span><span class="p">,</span> <span class="n">announcement</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- play media call</span>
@@ -757,11 +757,11 @@
         <span class="k">if</span> <span class="n">version</span> <span class="o">&lt;</span> <span class="n">MIN_MEDIA_PLAYER_VERSION</span><span class="p">:</span>  <span class="c1"># TOO OLD, USE ANNOUNCEMENT</span>
             <span class="n">announce</span> <span class="o">=</span> <span class="n">Announcement</span><span class="p">(</span><span class="n">media</span><span class="o">=</span><span class="n">media</span><span class="o">.</span><span class="n">media</span><span class="p">,</span>
                                     <span class="n">source_id</span><span class="o">=</span><span class="n">media</span><span class="o">.</span><span class="n">source_id</span><span class="p">)</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;announce&#39;</span><span class="p">,</span> <span class="n">announce</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;announce&#39;</span><span class="p">,</span> <span class="n">announce</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">,</span> <span class="n">media</span><span class="o">.</span><span class="n">json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
-            <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">parse_obj</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">_client</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">,</span> <span class="n">media</span><span class="o">.</span><span class="n">model_dump_json</span><span class="p">(</span><span class="o">**</span><span class="n">json_ser_kwargs</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">Status</span><span class="o">.</span><span class="n">model_validate</span><span class="p">(</span><span class="n">response</span><span class="p">)</span></div>
 
 
     <span class="c1"># -- client control</span>
