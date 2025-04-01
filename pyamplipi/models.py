@@ -117,6 +117,14 @@ class Stream(BaseModel):
     freq: Optional[str] = None
     client_id: Optional[str] = None
     token: Optional[str] = None
+    server: Optional[str] = None
+    index: Optional[int] = None
+    disabled: Optional[bool] = False
+    ap2: Optional[bool] = None
+    port: Optional[int] = None
+    browsable: Optional[bool] = False
+    temporary: Optional[bool] = False
+    has_pause: Optional[bool] = False
 
 
 class StreamUpdate(BaseModel):
