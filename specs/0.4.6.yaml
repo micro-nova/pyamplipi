@@ -4162,7 +4162,7 @@ paths:
                   vol_delta_f: 0.1
               Change volume relative to min/max volume:
                 value:
-                  vol_f: 0.44
+                  vol: 0.44
               Change volume in absolute decibels:
                 value:
                   vol: -45
@@ -4779,7 +4779,7 @@ paths:
       description: Get Group with id=**gid**
       operationId: get_group_api_groups__gid__get
       parameters:
-      - description: Group ID
+      - description: Stream ID
         required: true
         schema:
           title: Gid
@@ -4839,7 +4839,7 @@ paths:
       description: Delete a group (group=**gid**)
       operationId: delete_group_api_groups__gid__delete
       parameters:
-      - description: Group ID
+      - description: Stream ID
         required: true
         schema:
           title: Gid
@@ -5281,7 +5281,7 @@ paths:
       description: Update a groups's configuration (group=**gid**)
       operationId: set_group_api_groups__gid__patch
       parameters:
-      - description: Group ID
+      - description: Stream ID
         required: true
         schema:
           title: Gid
@@ -12759,7 +12759,7 @@ components:
             vol_delta_f: 0.1
         Change volume relative to min/max volume:
           value:
-            vol_f: 0.44
+            vol: 0.44
         Change volume in absolute decibels:
           value:
             vol: -45
@@ -12845,7 +12845,7 @@ components:
             vol_delta_f: 0.1
         Change volume relative to min/max volume:
           value:
-            vol_f: 0.44
+            vol: 0.44
         Change volume in absolute decibels:
           value:
             vol: -45
