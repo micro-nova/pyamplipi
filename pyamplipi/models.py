@@ -148,6 +148,14 @@ class StreamCommand(str, Enum):
     BAN = 'ban'
     SHELVE = 'shelve'
 
+class ZoneConnectionState(int, Enum):
+    """ Reflects if a zone is off or disconnected, or what source it's connected to """
+    OFF = -2
+    DISCONNECTED = -1
+    SOURCE_1 = 0
+    SOURCE_2 = 1
+    SOURCE_3 = 2
+    SOURCE_4 = 3
 
 class PresetState(BaseModel):
     """ A set of partial configuration changes to make to sources, zones, and groups """
@@ -199,7 +207,7 @@ class FirmwareInfo(BaseModel):
 
 
 class Info(BaseModel):
-    config_file: str = 'Uknown'
+    config_file: str = 'Unknown'
     version: str = 'Unknown'
     mock_ctrl: bool = False
     mock_streams: bool = False
