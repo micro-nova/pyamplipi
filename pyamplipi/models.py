@@ -60,6 +60,7 @@ class ZoneUpdate(BaseModel):
     mute: Optional[bool] = None
     vol: Optional[int] = None
     vol_f: Optional[float] = None
+    vol_delta_f: Optional[float] = None
     vol_min: Optional[int] = None
     vol_max: Optional[int] = None
     disabled: Optional[bool] = None
